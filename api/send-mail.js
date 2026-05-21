@@ -1,17 +1,12 @@
 require("dotenv").config();
 
-console.log(
-  "MAIL SERVER STARTING..."
-);
+console.log("MAIL SERVER STARTING...");
 
-const express =
-  require("express");
+const express = require("express");
 
-const cors =
-  require("cors");
+const cors = require("cors");
 
-const helmet =
-  require("helmet");
+const helmet = require("helmet");
 
 const createTransporter =
   require("../services/transporter");
@@ -37,7 +32,7 @@ const {
 const app = express();
 
 /* ============================================================
-   MIDDLEWARE
+   JSON
 ============================================================ */
 
 app.use(
@@ -46,49 +41,92 @@ app.use(
   })
 );
 
+/* ============================================================
+   SECURITY
+============================================================ */
+
 app.use(helmet());
 
 /* ============================================================
-   GLOBAL CORS
+   CORS FIX
 ============================================================ */
+
+const allowedOrigins = [
+
+  "http://localhost:5173",
+
+  /* ============================================================
+     NVKAR
+  ============================================================ */
+
+  "https://nvkar.onrender.com",
+
+  "https://nvkar.in",
+
+  "https://www.nvkar.in",
+
+  /* ============================================================
+     SHIPPZI
+  ============================================================ */
+
+  "https://shippzi.in",
+
+  "https://www.shippzi.in",
+
+  "https://shippzi-website-react.vercel.app",
+
+];
 
 app.use(
 
   cors({
 
-    origin: [
+    origin: function (
+      origin,
+      callback
+    ) {
 
       /* ============================================================
-         LOCAL
+         ALLOW POSTMAN / SERVER REQUESTS
       ============================================================ */
 
-      "http://localhost:5173",
+      if (!origin) {
+
+        return callback(
+          null,
+          true
+        );
+
+      }
 
       /* ============================================================
-         SHIPPZI
+         CHECK ORIGIN
       ============================================================ */
 
-      "https://shippzi.in",
+      if (
+        allowedOrigins.includes(
+          origin
+        )
+      ) {
 
-      "https://www.shippzi.in",
+        callback(
+          null,
+          true
+        );
 
-      "https://shippzi-website-react.vercel.app",
+      }
 
-      "https://shippzi-website-react-gfvcphsf-ramanas-projects-270e3398.vercel.app",
+      else {
 
-      "https://shippzi-website-react-9nxzo1lrk-ramanas-projects-270e3398.vercel.app",
+        callback(
+          new Error(
+            "CORS BLOCKED"
+          )
+        );
 
-      /* ============================================================
-         NVKAR
-      ============================================================ */
+      }
 
-      "https://nvkar.in",
-
-      "https://www.nvkar.in",
-
-      "https://nvkar.onrender.com",
-
-    ],
+    },
 
     methods: [
 
@@ -114,10 +152,20 @@ app.use(
 
 );
 
+/* ============================================================
+   OPTIONS FIX
+============================================================ */
+
+app.options("*", cors());
+
+/* ============================================================
+   RATE LIMIT
+============================================================ */
+
 app.use(mailLimiter);
 
 /* ============================================================
-   TEST ROUTE
+   ROOT ROUTE
 ============================================================ */
 
 app.get("/", (req, res) => {
@@ -134,7 +182,7 @@ app.get("/", (req, res) => {
 });
 
 /* ============================================================
-   SEND MAIL ROUTE
+   SEND MAIL API
 ============================================================ */
 
 app.post(
@@ -172,7 +220,7 @@ app.post(
       } = req.body;
 
       /* ============================================================
-         VALIDATION
+         APP VALIDATION
       ============================================================ */
 
       if (!appKey) {
@@ -205,39 +253,6 @@ app.post(
       }
 
       /* ============================================================
-         DOMAIN SECURITY
-      ============================================================ */
-
-      const origin =
-        req.headers.origin;
-
-      console.log(
-        "Request Origin:",
-        origin
-      );
-
-      if (
-
-        origin &&
-
-        !appConfig.allowedOrigins.includes(
-          origin
-        )
-
-      ) {
-
-        return res.status(403).json({
-
-          success: false,
-
-          message:
-            "Unauthorized domain",
-
-        });
-
-      }
-
-      /* ============================================================
          EMAIL VALIDATION
       ============================================================ */
 
@@ -259,7 +274,7 @@ app.post(
       }
 
       /* ============================================================
-         CREATE SMTP TRANSPORTER
+         SMTP TRANSPORTER
       ============================================================ */
 
       const transporter =
@@ -268,7 +283,10 @@ app.post(
         );
 
       transporter.verify(
-        (error, success) => {
+        (
+          error,
+          success
+        ) => {
 
           if (error) {
 
@@ -291,7 +309,7 @@ app.post(
       );
 
       /* ============================================================
-         CUSTOMER MAIL
+         CUSTOMER EMAIL
       ============================================================ */
 
       console.log(
@@ -333,7 +351,7 @@ app.post(
       );
 
       /* ============================================================
-         ADMIN MAIL
+         ADMIN EMAIL
       ============================================================ */
 
       console.log(
@@ -377,7 +395,7 @@ app.post(
       );
 
       /* ============================================================
-         SUCCESS RESPONSE
+         SUCCESS
       ============================================================ */
 
       return res.status(200).json({
