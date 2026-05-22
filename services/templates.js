@@ -608,21 +608,7 @@ style="
   font-weight:bold;
 ">
 
-Template 1:
-Maid Applicant Welcome Email
 
-</h2>
-
-<p style="
-  margin-top:10px;
-  color:#e7d8ff;
-  font-size:13px;
-">
-
-Sent to candidates after they
-submit their application form
-
-</p>
 
 </td>
 
