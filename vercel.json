@@ -1,15 +1,17 @@
 {
   "version": 2,
 
-  "functions": {
+  "builds": [
 
-    "api/send-mail.js": {
+    {
 
-      "runtime": "@vercel/node"
+      "src": "api/send-mail.js",
+
+      "use": "@vercel/node"
 
     }
 
-  },
+  ],
 
   "routes": [
 
@@ -17,7 +19,7 @@
 
       "src": "/api/send-mail",
 
-      "dest": "/api/send-mail.js"
+      "dest": "api/send-mail.js"
 
     }
 
