@@ -1,13 +1,5 @@
 require("dotenv").config();
 
-console.log("MAIL SERVER STARTING...");
-
-const express = require("express");
-
-const cors = require("cors");
-
-const helmet = require("helmet");
-
 const createTransporter =
   require("../services/transporter");
 
@@ -19,36 +11,12 @@ const {
   adminTemplate,
 } = require("../services/templates");
 
-const authMiddleware =
-  require("../middleware/auth");
-
-const mailLimiter =
-  require("../middleware/rateLimit");
-
 const {
   validateEmail,
 } = require("../services/validators");
 
-const app = express();
-
 /* ============================================================
-   JSON
-============================================================ */
-
-app.use(
-  express.json({
-    limit: "1mb",
-  })
-);
-
-/* ============================================================
-   SECURITY
-============================================================ */
-
-app.use(helmet());
-
-/* ============================================================
-   CORS FIX
+   ALLOWED ORIGINS
 ============================================================ */
 
 const allowedOrigins = [
@@ -77,363 +45,314 @@ const allowedOrigins = [
 
 ];
 
-app.use(
-
-  cors({
-
-    origin: function (
-      origin,
-      callback
-    ) {
-
-      /* ============================================================
-         ALLOW POSTMAN / SERVER REQUESTS
-      ============================================================ */
-
-      if (!origin) {
-
-        return callback(
-          null,
-          true
-        );
-
-      }
-
-      /* ============================================================
-         CHECK ORIGIN
-      ============================================================ */
-
-      if (
-        allowedOrigins.includes(
-          origin
-        )
-      ) {
-
-        callback(
-          null,
-          true
-        );
-
-      }
-
-      else {
-
-        callback(
-          new Error(
-            "CORS BLOCKED"
-          )
-        );
-
-      }
-
-    },
-
-    methods: [
-
-      "GET",
-
-      "POST",
-
-      "OPTIONS",
-
-    ],
-
-    allowedHeaders: [
-
-      "Content-Type",
-
-      "x-api-key",
-
-    ],
-
-    credentials: true,
-
-  })
-
-);
-
 /* ============================================================
-   OPTIONS FIX
+   MAIN API
 ============================================================ */
 
-app.options("*", cors());
+module.exports = async (req, res) => {
 
-/* ============================================================
-   RATE LIMIT
-============================================================ */
+  /* ============================================================
+     CORS HEADERS
+  ============================================================ */
 
-app.use(mailLimiter);
+  const origin =
+    req.headers.origin;
 
-/* ============================================================
-   ROOT ROUTE
-============================================================ */
+  if (
+    allowedOrigins.includes(origin)
+  ) {
 
-app.get("/", (req, res) => {
+    res.setHeader(
+      "Access-Control-Allow-Origin",
+      origin
+    );
 
-  return res.status(200).json({
+  }
 
-    success: true,
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS"
+  );
 
-    message:
-      "Secure Mail API Running",
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Content-Type, x-api-key"
+  );
 
-  });
+  /* ============================================================
+     OPTIONS REQUEST
+  ============================================================ */
 
-});
+  if (req.method === "OPTIONS") {
 
-/* ============================================================
-   SEND MAIL API
-============================================================ */
+    return res.status(200).end();
 
-app.post(
+  }
 
-  "/api/send-mail",
+  /* ============================================================
+     ONLY POST ALLOWED
+  ============================================================ */
 
-  authMiddleware,
+  if (req.method !== "POST") {
 
-  async (req, res) => {
+    return res.status(405).json({
 
-    try {
+      success: false,
 
-      console.log(
-        "Incoming Request..."
-      );
+      message:
+        "Method Not Allowed",
 
-      const {
+    });
 
-        app: appKey,
+  }
 
-        type,
+  /* ============================================================
+     API KEY VALIDATION
+  ============================================================ */
 
-        customerName,
+  const apiKey =
+    req.headers["x-api-key"];
 
-        customerEmail,
+  if (!apiKey) {
 
-        phone,
+    return res.status(401).json({
 
-        subject,
+      success: false,
 
-        customerMessage,
+      message:
+        "API key missing",
 
-        extraFields,
+    });
 
-      } = req.body;
+  }
 
-      /* ============================================================
-         APP VALIDATION
-      ============================================================ */
+  if (
+    apiKey !==
+    process.env.API_SECRET_KEY
+  ) {
 
-      if (!appKey) {
+    return res.status(403).json({
 
-        return res.status(400).json({
+      success: false,
 
-          success: false,
+      message:
+        "Invalid API key",
 
-          message:
-            "App key required",
+    });
 
-        });
+  }
 
-      }
+  try {
 
-      const appConfig =
-        apps[appKey];
+    console.log(
+      "Incoming Request..."
+    );
 
-      if (!appConfig) {
+    const {
 
-        return res.status(400).json({
+      app: appKey,
 
-          success: false,
+      type,
 
-          message:
-            "Invalid app",
+      customerName,
 
-        });
+      customerEmail,
 
-      }
+      phone,
 
-      /* ============================================================
-         EMAIL VALIDATION
-      ============================================================ */
+      subject,
 
-      if (
-        !validateEmail(
-          customerEmail
-        )
-      ) {
+      customerMessage,
 
-        return res.status(400).json({
+      extraFields,
 
-          success: false,
+    } = req.body;
 
-          message:
-            "Invalid email",
+    /* ============================================================
+       APP VALIDATION
+    ============================================================ */
 
-        });
+    if (!appKey) {
 
-      }
-
-      /* ============================================================
-         SMTP TRANSPORTER
-      ============================================================ */
-
-      const transporter =
-        createTransporter(
-          appConfig.smtp
-        );
-
-      transporter.verify(
-        (
-          error,
-          success
-        ) => {
-
-          if (error) {
-
-            console.log(
-              "SMTP ERROR:",
-              error
-            );
-
-          }
-
-          else {
-
-            console.log(
-              "SMTP READY"
-            );
-
-          }
-
-        }
-      );
-
-      /* ============================================================
-         CUSTOMER EMAIL
-      ============================================================ */
-
-      console.log(
-        "Sending Customer Mail..."
-      );
-
-      await transporter.sendMail({
-
-        from:
-          `${appConfig.senderName} <${appConfig.senderEmail}>`,
-
-        to:
-          customerEmail,
-
-        subject:
-          subject ||
-          `Thank You From ${appConfig.name}`,
-
-        html:
-          customerTemplate({
-
-            appName:
-              appConfig.name,
-
-            customerName,
-
-            message:
-              customerMessage,
-
-            color:
-              appConfig.color,
-
-          }),
-
-      });
-
-      console.log(
-        "Customer Mail Sent"
-      );
-
-      /* ============================================================
-         ADMIN EMAIL
-      ============================================================ */
-
-      console.log(
-        "Sending Admin Mail..."
-      );
-
-      await transporter.sendMail({
-
-        from:
-          `${appConfig.senderName} <${appConfig.senderEmail}>`,
-
-        to:
-          appConfig.adminEmail,
-
-        subject:
-          `[${appConfig.name}] New ${type} Submission`,
-
-        html:
-          adminTemplate({
-
-            appName:
-              appConfig.name,
-
-            customerName,
-
-            customerEmail,
-
-            phone,
-
-            formType:
-              type,
-
-            extraFields,
-
-          }),
-
-      });
-
-      console.log(
-        "Admin Mail Sent"
-      );
-
-      /* ============================================================
-         SUCCESS
-      ============================================================ */
-
-      return res.status(200).json({
-
-        success: true,
-
-        message:
-          "Emails sent successfully",
-
-      });
-
-    }
-
-    catch (error) {
-
-      console.log(
-        "MAIL ERROR:",
-        error
-      );
-
-      return res.status(500).json({
+      return res.status(400).json({
 
         success: false,
 
         message:
-          error.message ||
-          "Internal Server Error",
+          "App key required",
 
       });
 
     }
 
+    const appConfig =
+      apps[appKey];
+
+    if (!appConfig) {
+
+      return res.status(400).json({
+
+        success: false,
+
+        message:
+          "Invalid app",
+
+      });
+
+    }
+
+    /* ============================================================
+       EMAIL VALIDATION
+    ============================================================ */
+
+    if (
+      !validateEmail(
+        customerEmail
+      )
+    ) {
+
+      return res.status(400).json({
+
+        success: false,
+
+        message:
+          "Invalid email",
+
+      });
+
+    }
+
+    /* ============================================================
+       SMTP TRANSPORTER
+    ============================================================ */
+
+    const transporter =
+      createTransporter(
+        appConfig.smtp
+      );
+
+    console.log(
+      "SMTP READY"
+    );
+
+    /* ============================================================
+       CUSTOMER EMAIL
+    ============================================================ */
+
+    console.log(
+      "Sending Customer Mail..."
+    );
+
+    await transporter.sendMail({
+
+      from:
+        `${appConfig.senderName} <${appConfig.senderEmail}>`,
+
+      to:
+        customerEmail,
+
+      subject:
+        subject ||
+        `Thank You From ${appConfig.name}`,
+
+      html:
+        customerTemplate({
+
+          appName:
+            appConfig.name,
+
+          customerName,
+
+          message:
+            customerMessage,
+
+          color:
+            appConfig.color,
+
+        }),
+
+    });
+
+    console.log(
+      "Customer Mail Sent"
+    );
+
+    /* ============================================================
+       ADMIN EMAIL
+    ============================================================ */
+
+    console.log(
+      "Sending Admin Mail..."
+    );
+
+    await transporter.sendMail({
+
+      from:
+        `${appConfig.senderName} <${appConfig.senderEmail}>`,
+
+      to:
+        appConfig.adminEmail,
+
+      subject:
+        `[${appConfig.name}] New ${type} Submission`,
+
+      html:
+        adminTemplate({
+
+          appName:
+            appConfig.name,
+
+          customerName,
+
+          customerEmail,
+
+          phone,
+
+          formType:
+            type,
+
+          extraFields,
+
+        }),
+
+    });
+
+    console.log(
+      "Admin Mail Sent"
+    );
+
+    /* ============================================================
+       SUCCESS
+    ============================================================ */
+
+    return res.status(200).json({
+
+      success: true,
+
+      message:
+        "Emails sent successfully",
+
+    });
+
   }
 
-);
+  catch (error) {
 
-/* ============================================================
-   EXPORT
-============================================================ */
+    console.log(
+      "MAIL ERROR:",
+      error
+    );
 
-module.exports = app;
+    return res.status(500).json({
+
+      success: false,
+
+      message:
+        error.message ||
+        "Internal Server Error",
+
+    });
+
+  }
+
+};
