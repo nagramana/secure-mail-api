@@ -27,7 +27,7 @@ const getCompanyDetails = (website) => {
       "https://shippzi.in";
 
     logo =
-      "https://secure-mail-api.vercel.app/logos/shippzi.png";
+      "https://res.cloudinary.com/dzosvvlib/image/upload/v1779457198/11111111_djegxb.png";
 
   }
 
@@ -47,7 +47,7 @@ const getCompanyDetails = (website) => {
       "https://nvkar.in";
 
     logo =
-      "https://secure-mail-api.vercel.app/logos/nvkar.png";
+      "https://res.cloudinary.com/dzosvvlib/image/upload/v1778587420/logo_white_icvrqm.png";
 
   }
 
