@@ -124,6 +124,15 @@ style="
   text-align:center;
 ">
 
+<img
+  src="${logo}"
+  alt="${companyName}"
+  width="220"
+  style="
+    display:block;
+    margin:0 auto;
+  "
+/>
 
 <img
   src="${logo}"
@@ -310,8 +319,6 @@ style="
   text-align:center;
 ">
 
-
-
 <img
   src="${logo}"
   alt="${companyName}"
@@ -321,6 +328,8 @@ style="
     margin:0 auto;
   "
 />
+
+
 
 <p style="
   color:#00d084;
