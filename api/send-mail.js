@@ -47,8 +47,7 @@ module.exports = async (req, res) => {
      CORS
   ============================================================ */
 
-  const origin =
-    req.headers.origin;
+  const origin = req.headers.origin;
 
   if (
     allowedOrigins.includes(origin)
@@ -136,6 +135,10 @@ module.exports = async (req, res) => {
 
   try {
 
+    /* ============================================================
+       BODY DATA
+    ============================================================ */
+
     const {
 
       app: appKey,
@@ -149,8 +152,6 @@ module.exports = async (req, res) => {
       phone,
 
       subject,
-
-      customerMessage,
 
       extraFields,
 
@@ -170,7 +171,28 @@ module.exports = async (req, res) => {
         success: false,
 
         message:
-          "Invalid app",
+          "Invalid app selected",
+
+      });
+
+    }
+
+    /* ============================================================
+       REQUIRED FIELD CHECK
+    ============================================================ */
+
+    if (
+      !customerName ||
+      !customerEmail ||
+      !phone
+    ) {
+
+      return res.status(400).json({
+
+        success: false,
+
+        message:
+          "All fields are required",
 
       });
 
@@ -191,14 +213,14 @@ module.exports = async (req, res) => {
         success: false,
 
         message:
-          "Invalid email",
+          "Invalid email address",
 
       });
 
     }
 
     /* ============================================================
-       TRANSPORTER
+       CREATE SMTP TRANSPORTER
     ============================================================ */
 
     const transporter =
@@ -207,7 +229,7 @@ module.exports = async (req, res) => {
       );
 
     /* ============================================================
-       CUSTOMER EMAIL
+       CUSTOMER AUTO REPLY EMAIL
     ============================================================ */
 
     await transporter.sendMail({
@@ -225,23 +247,21 @@ module.exports = async (req, res) => {
       html:
         customerTemplate({
 
-          appName:
-            appConfig.name,
+          name:
+            customerName,
 
-          customerName,
+          service:
+            extraFields?.service || type,
 
-          message:
-            customerMessage,
-
-          color:
-            appConfig.color,
+          website:
+            appKey,
 
         }),
 
     });
 
     /* ============================================================
-       ADMIN EMAIL
+       ADMIN NOTIFICATION EMAIL
     ============================================================ */
 
     await transporter.sendMail({
@@ -258,23 +278,27 @@ module.exports = async (req, res) => {
       html:
         adminTemplate({
 
-          appName:
-            appConfig.name,
-
-          customerName,
-
-          customerEmail,
+          name:
+            customerName,
 
           phone,
 
-          formType:
-            type,
+          email:
+            customerEmail,
 
-          extraFields,
+          service:
+            extraFields?.service || type,
+
+          website:
+            appKey,
 
         }),
 
     });
+
+    /* ============================================================
+       SUCCESS RESPONSE
+    ============================================================ */
 
     return res.status(200).json({
 
@@ -289,14 +313,19 @@ module.exports = async (req, res) => {
 
   catch (error) {
 
-    console.log(error);
+    console.log(
+      "MAIL ERROR:",
+      error
+    );
 
     return res.status(500).json({
 
       success: false,
 
       message:
-        error.message,
+        error.message ||
+
+        "Internal Server Error",
 
     });
 
