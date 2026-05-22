@@ -127,9 +127,10 @@ style="
 <img
   src="${logo}"
   alt="${companyName}"
-  width="120"
+  width="220"
   style="
-    margin-bottom:18px;
+    display:block;
+    margin:0 auto;
   "
 />
 
@@ -321,9 +322,10 @@ style="
 <img
   src="${logo}"
   alt="${companyName}"
-  width="120"
+  width="220"
   style="
-    margin-bottom:18px;
+    display:block;
+    margin:0 auto;
   "
 />
 
