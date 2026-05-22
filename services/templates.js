@@ -1,6 +1,6 @@
 const getCompanyDetails = (website) => {
 
-  
+  let companyName = "Website";
 
   let supportEmail =
     "support@example.com";
