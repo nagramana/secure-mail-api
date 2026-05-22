@@ -127,18 +127,22 @@ style="
 <img
   src="${logo}"
   alt="${companyName}"
-  width="120"
+  width="220"
   style="
-    margin-bottom:18px;
+    display:block;
+    margin:0 auto;
   "
 />
 
-<h1 style="
-  color:#ffffff;
-  margin:0;
-">
-  ${companyName}
-</h1>
+<img
+  src="${logo}"
+  alt="${companyName}"
+  width="220"
+  style="
+    display:block;
+    margin:0 auto;
+  "
+/>
 
 <p style="
   color:#00d084;
@@ -318,18 +322,22 @@ style="
 <img
   src="${logo}"
   alt="${companyName}"
-  width="120"
+  width="220"
   style="
-    margin-bottom:18px;
+    display:block;
+    margin:0 auto;
   "
 />
 
-<h1 style="
-  color:#ffffff;
-  margin:0;
-">
-  ${companyName}
-</h1>
+<img
+  src="${logo}"
+  alt="${companyName}"
+  width="220"
+  style="
+    display:block;
+    margin:0 auto;
+  "
+/>
 
 <p style="
   color:#00d084;
