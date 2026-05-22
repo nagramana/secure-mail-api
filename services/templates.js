@@ -25,9 +25,7 @@ const getCompanyDetails = (website) => {
     websiteLink =
       "https://shippzi.in";
 
-    logo =
-      "https://res.cloudinary.com/dzosvvlib/image/upload/v1778587420/logo_white_icvrqm.png";
-
+    
   }
 
   /* ============================================================
@@ -44,9 +42,7 @@ const getCompanyDetails = (website) => {
     websiteLink =
       "https://nvkar.in";
 
-    logo =
-      "https://res.cloudinary.com/dzosvvlib/image/upload/v1778587420/logo_white_icvrqm.png";
-
+    
   }
 
   return {
