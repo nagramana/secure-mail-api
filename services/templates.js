@@ -1,31 +1,73 @@
 const getCompanyDetails = (website) => {
 
   let companyName = "Website";
-  let supportEmail = "support@example.com";
-  let websiteLink = "https://example.com";
+
+  let supportEmail =
+    "support@example.com";
+
+  let websiteLink =
+    "https://example.com";
+
+  let logo =
+    "https://yourdomain.com/logos/default.png";
+
+  /* ============================================================
+     SHIPPZI
+  ============================================================ */
 
   if (website === "shippzi") {
-    companyName = "Shippzi";
-    supportEmail = "support@shippzi.com";
-    websiteLink = "https://shippzi.com";
+
+    companyName =
+      "Shippzi";
+
+    supportEmail =
+      "shippzi.support@gmail.com";
+
+    websiteLink =
+      "https://shippzi.in";
+
+    logo =
+      "https://secure-mail-api.vercel.app/logos/shippzi.png";
+
   }
 
+  /* ============================================================
+     NVKAR
+  ============================================================ */
+
   if (website === "nvkar") {
-    companyName = "NVKAR";
-    supportEmail = "support@nvkar.com";
-    websiteLink = "https://nvkar.com";
+
+    companyName =
+      "NVKAR";
+
+    supportEmail =
+      "shippzi.support@gmail.com";
+
+    websiteLink =
+      "https://nvkar.in";
+
+    logo =
+      "https://secure-mail-api.vercel.app/logos/nvkar.png";
+
   }
 
   return {
+
     companyName,
+
     supportEmail,
+
     websiteLink,
+
+    logo,
+
   };
+
 };
 
-// ============================================
-// ADMIN TEMPLATE
-// ============================================
+/* ============================================================
+   ADMIN TEMPLATE
+============================================================ */
 
 const adminTemplate = ({
   name,
@@ -36,15 +78,17 @@ const adminTemplate = ({
 }) => {
 
   const {
-    companyName,
-  } = getCompanyDetails(website);
 
-  const selectedService =
-    typeof service === "object"
-      ? JSON.stringify(service)
-      : service;
+    companyName,
+
+    logo,
+
+  } = getCompanyDetails(
+    website
+  );
 
   return `
+
 <!DOCTYPE html>
 <html>
 
@@ -56,65 +100,80 @@ const adminTemplate = ({
 ">
 
 <table width="100%" cellpadding="0" cellspacing="0">
+
 <tr>
 <td align="center">
 
-<table width="650" cellpadding="0" cellspacing="0"
+<table width="650"
+cellpadding="0"
+cellspacing="0"
+
 style="
   background:#ffffff;
   margin-top:40px;
-  border-radius:14px;
+  border-radius:16px;
   overflow:hidden;
-  box-shadow:0 2px 12px rgba(0,0,0,0.08);
+  box-shadow:0 4px 18px rgba(0,0,0,0.08);
 ">
 
 <!-- HEADER -->
+
 <tr>
+
 <td style="
   background:#111111;
-  padding:28px 35px;
+  padding:35px;
+  text-align:center;
 ">
 
+<img
+  src="${logo}"
+  alt="${companyName}"
+  width="120"
+  style="
+    margin-bottom:18px;
+  "
+/>
+
 <h1 style="
-  margin:0;
   color:#ffffff;
-  font-size:30px;
+  margin:0;
 ">
   ${companyName}
 </h1>
 
 <p style="
-  margin:10px 0 0;
   color:#00d084;
+  margin-top:10px;
   font-size:15px;
-  font-weight:600;
+  font-weight:bold;
 ">
-  🚀 New Partner Registration
+  🚀 New Form Submission
 </p>
 
 </td>
+
 </tr>
 
 <!-- BODY -->
+
 <tr>
-<td style="padding:40px;">
+
+<td style="
+  padding:40px;
+">
 
 <h2 style="
   margin-top:0;
   color:#222;
 ">
-  New Registration Submission
+  New Customer Details
 </h2>
 
-<p style="
-  color:#666;
-  line-height:1.7;
-">
-  A new customer submitted the registration form.
-</p>
+<table width="100%"
+cellpadding="14"
+cellspacing="0"
 
-<!-- INFO CARD -->
-<table width="100%" cellpadding="14" cellspacing="0"
 style="
   margin-top:25px;
   border:1px solid #eeeeee;
@@ -122,23 +181,43 @@ style="
 ">
 
 <tr>
-<td style="font-weight:bold;width:180px;">Name</td>
-<td>${name}</td>
+<td style="font-weight:bold;width:180px;">
+Name
+</td>
+
+<td>
+${name}
+</td>
 </tr>
 
 <tr>
-<td style="font-weight:bold;">Phone</td>
-<td>${phone}</td>
+<td style="font-weight:bold;">
+Phone
+</td>
+
+<td>
+${phone}
+</td>
 </tr>
 
 <tr>
-<td style="font-weight:bold;">Email</td>
-<td>${email}</td>
+<td style="font-weight:bold;">
+Email
+</td>
+
+<td>
+${email}
+</td>
 </tr>
 
 <tr>
-<td style="font-weight:bold;">Selected Service</td>
-<td>${selectedService}</td>
+<td style="font-weight:bold;">
+Service
+</td>
+
+<td>
+${service}
+</td>
 </tr>
 
 </table>
@@ -149,8 +228,11 @@ style="
   padding-top:20px;
 ">
 
-<p style="margin:0;color:#777;">
-  ${companyName} Automated Mail System
+<p style="
+  margin:0;
+  color:#777;
+">
+  ${companyName} Mail System
 </p>
 
 </div>
@@ -162,16 +244,19 @@ style="
 
 </td>
 </tr>
+
 </table>
 
 </body>
 </html>
+
 `;
+
 };
 
-// ============================================
-// CUSTOMER TEMPLATE
-// ============================================
+/* ============================================================
+   CUSTOMER TEMPLATE
+============================================================ */
 
 const customerTemplate = ({
   name,
@@ -180,17 +265,21 @@ const customerTemplate = ({
 }) => {
 
   const {
-    companyName,
-    supportEmail,
-    websiteLink,
-  } = getCompanyDetails(website);
 
-  const selectedService =
-    typeof service === "object"
-      ? JSON.stringify(service)
-      : service;
+    companyName,
+
+    supportEmail,
+
+    websiteLink,
+
+    logo,
+
+  } = getCompanyDetails(
+    website
+  );
 
   return `
+
 <!DOCTYPE html>
 <html>
 
@@ -202,48 +291,68 @@ const customerTemplate = ({
 ">
 
 <table width="100%" cellpadding="0" cellspacing="0">
+
 <tr>
 <td align="center">
 
-<table width="650" cellpadding="0" cellspacing="0"
+<table width="650"
+cellpadding="0"
+cellspacing="0"
+
 style="
   background:#ffffff;
   margin-top:40px;
-  border-radius:14px;
+  border-radius:16px;
   overflow:hidden;
-  box-shadow:0 2px 12px rgba(0,0,0,0.08);
+  box-shadow:0 4px 18px rgba(0,0,0,0.08);
 ">
 
 <!-- HEADER -->
+
 <tr>
+
 <td style="
   background:#111111;
-  padding:28px 35px;
+  padding:35px;
+  text-align:center;
 ">
 
+<img
+  src="${logo}"
+  alt="${companyName}"
+  width="120"
+  style="
+    margin-bottom:18px;
+  "
+/>
+
 <h1 style="
-  margin:0;
   color:#ffffff;
-  font-size:30px;
+  margin:0;
 ">
   ${companyName}
 </h1>
 
 <p style="
-  margin:10px 0 0;
   color:#00d084;
+  margin-top:10px;
   font-size:15px;
-  font-weight:600;
+  font-weight:bold;
 ">
-  ✅ Registration Confirmation
+  ✅ Registration Successful
 </p>
 
 </td>
+
 </tr>
 
 <!-- BODY -->
+
 <tr>
-<td style="padding:40px;">
+
+<td style="
+  padding:40px;
+">
 
 <h2 style="
   margin-top:0;
@@ -256,7 +365,7 @@ style="
   color:#666;
   line-height:1.8;
 ">
-  Your request has been received successfully.
+  We received your request successfully.
 </p>
 
 <p style="
@@ -264,29 +373,9 @@ style="
   line-height:1.8;
 ">
   Selected Service:
-  <strong>${selectedService}</strong>
+  <strong>${service}</strong>
 </p>
 
-<!-- NEXT STEPS -->
-<div style="
-  margin-top:30px;
-">
-
-<h3 style="
-  color:#222;
-">
-  ✅ What Happens Next?
-</h3>
-
-<p style="color:#555;">➜ Our support team will review your request</p>
-
-<p style="color:#555;">➜ We will contact you shortly</p>
-
-<p style="color:#555;">➜ Verification & onboarding process</p>
-
-</div>
-
-<!-- HELP BOX -->
 <div style="
   background:#f7f7f7;
   padding:18px;
@@ -295,34 +384,40 @@ style="
 ">
 
 <h4 style="margin-top:0;">
-  Need Help?
+Need Help?
 </h4>
 
-<p style="margin:6px 0;color:#666;">
+<p style="
+  margin:6px 0;
+  color:#666;
+">
   📧 ${supportEmail}
 </p>
 
 </div>
 
-<!-- BUTTON -->
-<div style="margin-top:30px;">
+<div style="
+  margin-top:35px;
+">
 
 <a href="${websiteLink}"
+
 style="
   background:#111111;
   color:#ffffff;
   text-decoration:none;
-  padding:14px 26px;
+  padding:14px 28px;
   border-radius:8px;
   display:inline-block;
-  font-weight:600;
+  font-weight:bold;
 ">
+
 Visit Website
+
 </a>
 
 </div>
 
-<!-- FOOTER -->
 <div style="
   margin-top:40px;
   border-top:1px solid #eeeeee;
@@ -332,14 +427,6 @@ Visit Website
 <p style="
   margin:0;
   color:#777;
-">
-  Best Regards,
-</p>
-
-<p style="
-  margin-top:8px;
-  font-weight:bold;
-  color:#111;
 ">
   Team ${companyName}
 </p>
@@ -353,14 +440,20 @@ Visit Website
 
 </td>
 </tr>
+
 </table>
 
 </body>
 </html>
+
 `;
+
 };
 
 module.exports = {
+
   adminTemplate,
+
   customerTemplate,
+
 };
