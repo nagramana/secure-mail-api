@@ -17,8 +17,7 @@ const getCompanyDetails = (website) => {
 
   if (website === "shippzi") {
 
-    companyName =
-      "Shippzi";
+    
 
     supportEmail =
       "shippzi.support@gmail.com";
@@ -37,8 +36,7 @@ const getCompanyDetails = (website) => {
 
   if (website === "nvkar") {
 
-    companyName =
-      "NVKAR";
+    
 
     supportEmail =
       "shippzi.support@gmail.com";
