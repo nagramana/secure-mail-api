@@ -245,31 +245,104 @@ const adminTemplate = ({
 
   let fieldsHtml = "";
 
+  // =========================================
+  // EXTRA FIELDS FIX
+  // =========================================
+
   if (extraFields) {
 
-    Object.entries(extraFields).forEach(([key, value]) => {
+    // ARRAY FIX
+    if (Array.isArray(extraFields)) {
 
-      fieldsHtml += `
-      <tr>
-        <td style="
-          padding:12px;
-          font-weight:bold;
-          border:1px solid #eeeeee;
-          width:180px;
-        ">
-          ${key}
-        </td>
+      extraFields.forEach((item) => {
 
-        <td style="
-          padding:12px;
-          border:1px solid #eeeeee;
-        ">
-          ${value}
-        </td>
-      </tr>
-      `;
+        fieldsHtml += `
+        <tr>
 
-    });
+          <td style="
+            padding:12px;
+            font-weight:bold;
+            border:1px solid #eeeeee;
+            width:180px;
+          ">
+            Detail
+          </td>
+
+          <td style="
+            padding:12px;
+            border:1px solid #eeeeee;
+          ">
+            ${item}
+          </td>
+
+        </tr>
+        `;
+
+      });
+
+    }
+
+    // OBJECT FIX
+    else {
+
+      Object.entries(extraFields).forEach(([key, value]) => {
+
+        // SKIP EMPTY VALUES
+        if (
+          value === "" ||
+          value === null ||
+          value === undefined
+        ) {
+          return;
+        }
+
+        // ARRAY VALUE FIX
+        if (Array.isArray(value)) {
+
+          value = value.join(", ");
+
+        }
+
+        // OBJECT VALUE FIX
+        if (
+          typeof value === "object" &&
+          !Array.isArray(value)
+        ) {
+
+          value = JSON.stringify(
+            value,
+            null,
+            2
+          );
+
+        }
+
+        fieldsHtml += `
+        <tr>
+
+          <td style="
+            padding:12px;
+            font-weight:bold;
+            border:1px solid #eeeeee;
+            width:180px;
+            text-transform:capitalize;
+          ">
+            ${key}
+          </td>
+
+          <td style="
+            padding:12px;
+            border:1px solid #eeeeee;
+          ">
+            ${value}
+          </td>
+
+        </tr>
+        `;
+
+      });
+
+    }
 
   }
 
