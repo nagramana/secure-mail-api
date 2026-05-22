@@ -553,15 +553,15 @@ Shippzi Team
   ============================================================ */
 
   const applicationId =
-    "APP-" +
-    Math.floor(
-      100000 + Math.random() * 900000
-    );
+  "APP-" +
+  Math.floor(
+    100000 + Math.random() * 900000
+  );
 
-  const today =
-    new Date().toLocaleDateString();
+const today =
+  new Date().toLocaleDateString();
 
-  return `
+return `
 
 <!DOCTYPE html>
 <html>
@@ -569,7 +569,7 @@ Shippzi Team
 <body style="
   margin:0;
   padding:0;
-  background:#f3f3f3;
+  background:#f2f2f2;
   font-family:Arial,sans-serif;
 ">
 
@@ -586,41 +586,49 @@ cellspacing="0"
 
 style="
   background:#ffffff;
-  margin-top:30px;
-  border-radius:16px;
+  margin-top:20px;
+  border-radius:12px;
   overflow:hidden;
 ">
+
+<!-- TOP HEADER -->
 
 <tr>
 
 <td style="
   background:#6f42c1;
-  padding:25px;
   text-align:center;
+  padding:18px;
 ">
 
 <h2 style="
   color:#ffffff;
   margin:0;
   font-size:26px;
+  font-weight:bold;
 ">
 
-NVKAR Application Welcome Email
+Template 1:
+Maid Applicant Welcome Email
 
 </h2>
 
 <p style="
-  color:#efe4ff;
   margin-top:10px;
+  color:#e7d8ff;
+  font-size:13px;
 ">
 
-Application Submitted Successfully
+Sent to candidates after they
+submit their application form
 
 </p>
 
 </td>
 
 </tr>
+
+<!-- MAIN HEADER -->
 
 <tr>
 
@@ -632,8 +640,7 @@ Application Submitted Successfully
 
 <img
   src="${logo}"
-  alt="NVKAR"
-  width="220"
+  width="200"
   style="
     display:block;
     margin:0 auto 20px;
@@ -651,18 +658,20 @@ NVKAR
 </h1>
 
 <p style="
-  color:#f3e9ff;
+  color:#f3e8ff;
   margin-top:12px;
   font-size:16px;
 ">
 
-Welcome To India's Trusted Service Network
+Welcome to India's Trusted Service Network
 
 </p>
 
 </td>
 
 </tr>
+
+<!-- BODY -->
 
 <tr>
 
@@ -682,22 +691,43 @@ Hello
 
 <p style="
   color:#555555;
-  line-height:1.8;
+  line-height:1.9;
   font-size:15px;
 ">
 
-Thank you for applying with NVKAR.
+Thank you for taking the exciting step
+to become part of the NVKAR family!
 
-We are excited to review your application
-and connect you with trusted opportunities.
+We're thrilled that you've applied
+to join our growing network of trusted,
+skilled professionals.
 
 </p>
+
+<p style="
+  color:#555555;
+  line-height:1.9;
+  font-size:15px;
+">
+
+Your application has been
+<strong>
+received successfully
+</strong>
+
+and we're reviewing your details
+with care to ensure the perfect match
+with our discerning clients.
+
+</p>
+
+<!-- DETAILS -->
 
 <div style="
   background:#f3ecff;
   border-left:4px solid #7d52b9;
-  padding:22px;
-  border-radius:10px;
+  border-radius:8px;
+  padding:20px;
   margin-top:30px;
 ">
 
@@ -706,7 +736,7 @@ and connect you with trusted opportunities.
   color:#7d52b9;
 ">
 
-📋 Application Details
+📋 Your Application Details
 
 </h3>
 
@@ -716,12 +746,12 @@ ${applicationId}
 </p>
 
 <p>
-<strong>Service:</strong>
+<strong>Applied For:</strong>
 ${service}
 </p>
 
 <p>
-<strong>Date:</strong>
+<strong>Submitted On:</strong>
 ${today}
 </p>
 
@@ -731,6 +761,174 @@ Under Review
 </p>
 
 </div>
+
+<!-- WHY CHOOSE -->
+
+<h2 style="
+  margin-top:40px;
+  color:#7d52b9;
+">
+
+Why Choose NVKAR?
+
+</h2>
+
+<table width="100%"
+cellpadding="12"
+style="
+  margin-top:10px;
+">
+
+<tr>
+<td style="
+  border-bottom:1px solid #eeeeee;
+">
+✔ Transparent Payments:
+Earn commission directly based
+on services completed.
+</td>
+</tr>
+
+<tr>
+<td style="
+  border-bottom:1px solid #eeeeee;
+">
+✔ Flexible Scheduling:
+Work on your terms with flexible timing.
+</td>
+</tr>
+
+<tr>
+<td style="
+  border-bottom:1px solid #eeeeee;
+">
+✔ Professional Support:
+24/7 customer support whenever needed.
+</td>
+</tr>
+
+<tr>
+<td style="
+  border-bottom:1px solid #eeeeee;
+">
+✔ Growth Opportunities:
+Build your reputation and grow faster.
+</td>
+</tr>
+
+<tr>
+<td>
+✔ Trust & Safety:
+Verified clients and secure environment.
+</td>
+</tr>
+
+</table>
+
+<!-- WHAT HAPPENS -->
+
+<h2 style="
+  margin-top:45px;
+  color:#7d52b9;
+">
+
+What Happens Next?
+
+</h2>
+
+<p style="
+  color:#555555;
+  line-height:1.9;
+">
+
+Our team will carefully review
+your application against our
+quality standards.
+
+This typically takes
+<strong>
+3-5 business days
+</strong>.
+
+</p>
+
+<!-- BOXES -->
+
+<table width="100%"
+cellpadding="10"
+cellspacing="10"
+style="
+  margin-top:20px;
+">
+
+<tr>
+
+<td width="50%"
+
+style="
+  background:#faf7ff;
+  border:1px solid #eadcff;
+  border-radius:8px;
+  padding:18px;
+">
+
+<h3 style="
+  margin-top:0;
+  color:#7d52b9;
+">
+
+📞 Need Help?
+
+</h3>
+
+<p style="
+  color:#555555;
+  font-size:14px;
+">
+
+Got questions about your application?
+
+Our support team is here for you.
+
+</p>
+
+</td>
+
+<td width="50%"
+
+style="
+  background:#faf7ff;
+  border:1px solid #eadcff;
+  border-radius:8px;
+  padding:18px;
+">
+
+<h3 style="
+  margin-top:0;
+  color:#7d52b9;
+">
+
+🎯 Quick Tips
+
+</h3>
+
+<p style="
+  color:#555555;
+  font-size:14px;
+">
+
+Complete your profile fully
+to improve approval chances.
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+<!-- BUTTON -->
 
 <div style="
   text-align:center;
@@ -743,57 +941,50 @@ style="
   background:#7d52b9;
   color:#ffffff;
   text-decoration:none;
-  padding:16px 36px;
+  padding:16px 34px;
   border-radius:8px;
   display:inline-block;
   font-weight:bold;
   font-size:16px;
 ">
 
-Visit Website
+Track Your Application Status
 
 </a>
 
 </div>
 
+<!-- FOOTER -->
+
 <div style="
-  margin-top:45px;
-  border-top:1px solid #eeeeee;
-  padding-top:25px;
+  margin-top:50px;
 ">
 
 <p style="
   color:#555555;
-  line-height:1.8;
+  line-height:1.9;
 ">
 
-Thank you for choosing NVKAR.
+We're excited about the possibility
+of working with you.
+
+At NVKAR, we believe that great service
+starts with great people.
 
 </p>
 
 <p style="
-  margin-top:25px;
+  margin-top:30px;
   color:#333333;
 ">
 
-Warm Regards,
+Warm regards,
 
 <br/><br/>
 
 <strong>
-Team NVKAR
+The NVKAR Team
 </strong>
-
-</p>
-
-<p style="
-  color:#777777;
-  font-size:13px;
-  margin-top:20px;
-">
-
-Support:
-${supportEmail}
 
 </p>
 
