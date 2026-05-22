@@ -4,7 +4,7 @@
   "main": "api/send-mail.js",
   "scripts": {
     "dev": "nodemon api/send-mail.js",
-    "start": "node api/send-mail.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

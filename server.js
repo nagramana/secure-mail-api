@@ -8,6 +8,10 @@ const sendMailRoute = require("./api/send-mail");
 
 const app = express();
 
+// =====================================
+// MIDDLEWARE
+// =====================================
+
 app.use(helmet());
 
 app.use(cors({
@@ -16,7 +20,23 @@ app.use(cors({
 
 app.use(express.json());
 
+// =====================================
+// ROUTES
+// =====================================
+
 app.use("/api", sendMailRoute);
+
+// =====================================
+// TEST ROUTE
+// =====================================
+
+app.get("/", (req, res) => {
+  res.send("Mail Server Running");
+});
+
+// =====================================
+// SERVER
+// =====================================
 
 const PORT = process.env.PORT || 5000;
 

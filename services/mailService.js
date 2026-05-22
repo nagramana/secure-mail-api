@@ -19,134 +19,364 @@ const sendMail = async (data) => {
     website,
   } = data;
 
+  // =====================================
+  // COMPANY SETTINGS
+  // =====================================
+
   let companyName = "Website";
+  let supportEmail = "support@example.com";
+  let websiteLink = "https://example.com";
 
   if (website === "shippzi") {
     companyName = "Shippzi";
+    supportEmail = "support@shippzi.com";
+    websiteLink = "https://shippzi.com";
   }
 
   if (website === "nvkar") {
-    companyName = "Nvkar";
+    companyName = "NVKAR";
+    supportEmail = "support@nvkar.com";
+    websiteLink = "https://nvkar.com";
   }
 
-  const mailOptions = {
+  // =====================================
+  // FIX OBJECT ISSUE
+  // =====================================
+
+  const selectedService =
+    typeof service === "object"
+      ? JSON.stringify(service)
+      : service;
+
+  // =====================================
+  // ADMIN MAIL
+  // =====================================
+
+  const adminMailOptions = {
 
     from: `"${companyName} Support" <${process.env.EMAIL_USER}>`,
 
     to: process.env.RECEIVER_EMAIL,
 
-    subject: `New Inquiry From ${companyName}`,
+    subject: `[${companyName}] New Partner Registration`,
 
     html: `
-    <!DOCTYPE html>
-    <html>
+<!DOCTYPE html>
+<html>
 
-    <body style="
-      margin:0;
-      padding:0;
-      background:#f4f4f4;
-      font-family:Arial,sans-serif;
-    ">
+<body style="
+  margin:0;
+  padding:0;
+  background:#f4f4f4;
+  font-family:Arial,sans-serif;
+">
 
-    <table width="100%" cellpadding="0" cellspacing="0">
-    <tr>
-    <td align="center">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">
 
-    <table width="600" cellpadding="0" cellspacing="0"
-      style="
-        background:#ffffff;
-        margin-top:30px;
-        border-radius:12px;
-        overflow:hidden;
-      "
-    >
+<table width="650" cellpadding="0" cellspacing="0"
+style="
+  background:#ffffff;
+  margin-top:40px;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 2px 12px rgba(0,0,0,0.08);
+">
 
-      <tr>
-        <td style="
-          background:#000000;
-          color:#ffffff;
-          padding:30px;
-          text-align:center;
-          font-size:28px;
-          font-weight:bold;
-        ">
-          ${companyName}
-        </td>
-      </tr>
+<!-- HEADER -->
+<tr>
+<td style="
+  background:#111111;
+  padding:28px 35px;
+">
 
-      <tr>
-        <td style="padding:30px;text-align:center;">
+<h1 style="
+  margin:0;
+  color:#ffffff;
+  font-size:30px;
+">
+  ${companyName}
+</h1>
 
-          <h2 style="margin:0;color:#222;">
-            New Customer Inquiry
-          </h2>
+<p style="
+  margin:10px 0 0;
+  color:#00d084;
+  font-size:15px;
+  font-weight:600;
+">
+  🚀 New Partner Registration
+</p>
 
-          <p style="color:#777;margin-top:10px;">
-            A customer submitted the form.
-          </p>
+</td>
+</tr>
 
-        </td>
-      </tr>
+<!-- BODY -->
+<tr>
+<td style="padding:40px;">
 
-      <tr>
-        <td style="padding:0 30px 30px;">
+<h2 style="
+  margin-top:0;
+  color:#222;
+">
+  New Registration Submission
+</h2>
 
-          <table width="100%" cellpadding="12" cellspacing="0"
-            style="
-              border:1px solid #eeeeee;
-              border-radius:10px;
-            "
-          >
+<p style="
+  color:#666;
+  line-height:1.7;
+">
+  A new customer submitted the registration form.
+</p>
 
-            <tr>
-              <td style="font-weight:bold;">Name</td>
-              <td>${name}</td>
-            </tr>
+<!-- INFO CARD -->
+<table width="100%" cellpadding="14" cellspacing="0"
+style="
+  margin-top:25px;
+  border:1px solid #eeeeee;
+  border-radius:10px;
+">
 
-            <tr>
-              <td style="font-weight:bold;">Phone</td>
-              <td>${phone}</td>
-            </tr>
+<tr>
+<td style="font-weight:bold;width:180px;">Name</td>
+<td>${name}</td>
+</tr>
 
-            <tr>
-              <td style="font-weight:bold;">Email</td>
-              <td>${email}</td>
-            </tr>
+<tr>
+<td style="font-weight:bold;">Phone</td>
+<td>${phone}</td>
+</tr>
 
-            <tr>
-              <td style="font-weight:bold;">Service</td>
-              <td>${service}</td>
-            </tr>
+<tr>
+<td style="font-weight:bold;">Email</td>
+<td>${email}</td>
+</tr>
 
-          </table>
+<tr>
+<td style="font-weight:bold;">Selected Service</td>
+<td>${selectedService}</td>
+</tr>
 
-        </td>
-      </tr>
+</table>
 
-      <tr>
-        <td style="
-          background:#f7f7f7;
-          padding:20px;
-          text-align:center;
-          color:#888;
-          font-size:13px;
-        ">
-          © ${new Date().getFullYear()} ${companyName}
-        </td>
-      </tr>
+<!-- FOOTER -->
+<div style="
+  margin-top:35px;
+  border-top:1px solid #eeeeee;
+  padding-top:20px;
+">
 
-    </table>
+<p style="margin:0;color:#777;">
+  ${companyName} Automated Mail System
+</p>
 
-    </td>
-    </tr>
-    </table>
+</div>
 
-    </body>
-    </html>
-    `,
+</td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>
+`,
   };
 
-  return transporter.sendMail(mailOptions);
+  // =====================================
+  // CUSTOMER MAIL
+  // =====================================
+
+  const customerMailOptions = {
+
+    from: `"${companyName} Support" <${process.env.EMAIL_USER}>`,
+
+    to: email,
+
+    subject: `${companyName} Registration Confirmation`,
+
+    html: `
+<!DOCTYPE html>
+<html>
+
+<body style="
+  margin:0;
+  padding:0;
+  background:#f4f4f4;
+  font-family:Arial,sans-serif;
+">
+
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">
+
+<table width="650" cellpadding="0" cellspacing="0"
+style="
+  background:#ffffff;
+  margin-top:40px;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 2px 12px rgba(0,0,0,0.08);
+">
+
+<!-- HEADER -->
+<tr>
+<td style="
+  background:#111111;
+  padding:28px 35px;
+">
+
+<h1 style="
+  margin:0;
+  color:#ffffff;
+  font-size:30px;
+">
+  ${companyName}
+</h1>
+
+<p style="
+  margin:10px 0 0;
+  color:#00d084;
+  font-size:15px;
+  font-weight:600;
+">
+  ✅ Registration Confirmation
+</p>
+
+</td>
+</tr>
+
+<!-- BODY -->
+<tr>
+<td style="padding:40px;">
+
+<h2 style="
+  margin-top:0;
+  color:#222;
+">
+  Thank You ${name}
+</h2>
+
+<p style="
+  color:#666;
+  line-height:1.8;
+">
+  Your request has been received successfully.
+</p>
+
+<p style="
+  color:#666;
+  line-height:1.8;
+">
+  Selected Service:
+  <strong>${selectedService}</strong>
+</p>
+
+<!-- NEXT STEPS -->
+<div style="
+  margin-top:30px;
+">
+
+<h3 style="
+  color:#222;
+">
+  ✅ What Happens Next?
+</h3>
+
+<p style="color:#555;">➜ Our support team will review your request</p>
+
+<p style="color:#555;">➜ We will contact you shortly</p>
+
+<p style="color:#555;">➜ Verification & onboarding process</p>
+
+</div>
+
+<!-- HELP BOX -->
+<div style="
+  background:#f7f7f7;
+  padding:18px;
+  border-radius:10px;
+  margin-top:30px;
+">
+
+<h4 style="margin-top:0;">
+  Need Help?
+</h4>
+
+<p style="margin:6px 0;color:#666;">
+  📧 ${supportEmail}
+</p>
+
+</div>
+
+<!-- BUTTON -->
+<div style="margin-top:30px;">
+
+<a href="${websiteLink}"
+style="
+  background:#111111;
+  color:#ffffff;
+  text-decoration:none;
+  padding:14px 26px;
+  border-radius:8px;
+  display:inline-block;
+  font-weight:600;
+">
+Visit Website
+</a>
+
+</div>
+
+<!-- FOOTER -->
+<div style="
+  margin-top:40px;
+  border-top:1px solid #eeeeee;
+  padding-top:20px;
+">
+
+<p style="
+  margin:0;
+  color:#777;
+">
+  Best Regards,
+</p>
+
+<p style="
+  margin-top:8px;
+  font-weight:bold;
+  color:#111;
+">
+  Team ${companyName}
+</p>
+
+</div>
+
+</td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>
+`,
+  };
+
+  // =====================================
+  // SEND BOTH MAILS
+  // =====================================
+
+  await transporter.sendMail(adminMailOptions);
+
+  await transporter.sendMail(customerMailOptions);
+
+  return true;
 };
 
 module.exports = sendMail;
