@@ -26,7 +26,7 @@ const getCompanyDetails = (website) => {
       "https://shippzi.in";
 
     logo =
-      "https://res.cloudinary.com/dzosvvlib/image/upload/v1779457198/11111111_djegxb.png";
+      "https://res.cloudinary.com/dzosvvlib/image/upload/v1778587420/logo_white_icvrqm.png";
 
   }
 
