@@ -23,19 +23,11 @@ const allowedOrigins = [
 
   "http://localhost:5173",
 
-  /* ============================================================
-     NVKAR
-  ============================================================ */
-
   "https://nvkar.onrender.com",
 
   "https://nvkar.in",
 
   "https://www.nvkar.in",
-
-  /* ============================================================
-     SHIPPZI
-  ============================================================ */
 
   "https://shippzi.in",
 
@@ -52,7 +44,7 @@ const allowedOrigins = [
 module.exports = async (req, res) => {
 
   /* ============================================================
-     CORS HEADERS
+     CORS
   ============================================================ */
 
   const origin =
@@ -80,7 +72,7 @@ module.exports = async (req, res) => {
   );
 
   /* ============================================================
-     OPTIONS REQUEST
+     OPTIONS
   ============================================================ */
 
   if (req.method === "OPTIONS") {
@@ -90,7 +82,7 @@ module.exports = async (req, res) => {
   }
 
   /* ============================================================
-     ONLY POST ALLOWED
+     ONLY POST
   ============================================================ */
 
   if (req.method !== "POST") {
@@ -107,7 +99,7 @@ module.exports = async (req, res) => {
   }
 
   /* ============================================================
-     API KEY VALIDATION
+     API KEY CHECK
   ============================================================ */
 
   const apiKey =
@@ -144,10 +136,6 @@ module.exports = async (req, res) => {
 
   try {
 
-    console.log(
-      "Incoming Request..."
-    );
-
     const {
 
       app: appKey,
@@ -171,19 +159,6 @@ module.exports = async (req, res) => {
     /* ============================================================
        APP VALIDATION
     ============================================================ */
-
-    if (!appKey) {
-
-      return res.status(400).json({
-
-        success: false,
-
-        message:
-          "App key required",
-
-      });
-
-    }
 
     const appConfig =
       apps[appKey];
@@ -223,7 +198,7 @@ module.exports = async (req, res) => {
     }
 
     /* ============================================================
-       SMTP TRANSPORTER
+       TRANSPORTER
     ============================================================ */
 
     const transporter =
@@ -231,17 +206,9 @@ module.exports = async (req, res) => {
         appConfig.smtp
       );
 
-    console.log(
-      "SMTP READY"
-    );
-
     /* ============================================================
        CUSTOMER EMAIL
     ============================================================ */
-
-    console.log(
-      "Sending Customer Mail..."
-    );
 
     await transporter.sendMail({
 
@@ -273,17 +240,9 @@ module.exports = async (req, res) => {
 
     });
 
-    console.log(
-      "Customer Mail Sent"
-    );
-
     /* ============================================================
        ADMIN EMAIL
     ============================================================ */
-
-    console.log(
-      "Sending Admin Mail..."
-    );
 
     await transporter.sendMail({
 
@@ -317,14 +276,6 @@ module.exports = async (req, res) => {
 
     });
 
-    console.log(
-      "Admin Mail Sent"
-    );
-
-    /* ============================================================
-       SUCCESS
-    ============================================================ */
-
     return res.status(200).json({
 
       success: true,
@@ -338,18 +289,14 @@ module.exports = async (req, res) => {
 
   catch (error) {
 
-    console.log(
-      "MAIL ERROR:",
-      error
-    );
+    console.log(error);
 
     return res.status(500).json({
 
       success: false,
 
       message:
-        error.message ||
-        "Internal Server Error",
+        error.message,
 
     });
 
