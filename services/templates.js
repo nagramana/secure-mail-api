@@ -1300,9 +1300,20 @@ Our support team is here for you.
 
 </td>
 
+
 </p>
 
 </td>
+
+
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
 
 <!-- BUTTON -->
 
