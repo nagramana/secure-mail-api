@@ -1256,6 +1256,20 @@ style="
 📞 Need Help?
 
 
+
+
+
+<p style="
+  color:#555555;
+  font-size:14px;
+">
+
+Got questions about your application?
+
+Our support team is here for you.
+
+</p>
+<br/>
 <a
 href="https://wa.me/917893024466"
 target="_blank"
@@ -1274,16 +1288,6 @@ font-weight:bold;
 </a>
 
 
-<p style="
-  color:#555555;
-  font-size:14px;
-">
-
-Got questions about your application?
-
-Our support team is here for you.
-
-</p>
 
 </td>
 
