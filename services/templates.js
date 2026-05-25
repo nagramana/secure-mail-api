@@ -1281,9 +1281,9 @@ Our support team is here for you.
 
 
 
-</tr>
 
-</table>
+
+
 
 <!-- BUTTON -->
 
