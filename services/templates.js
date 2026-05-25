@@ -276,9 +276,288 @@ const customerTemplate = ({
      SHIPPZI TEMPLATE
   ============================================================ */
 
-  if (website === "shippzi") {
+  /* ============================================================
+   SHIPPZI RIDER TEMPLATE
+============================================================ */
 
-    return `
+if (website === "shippzi-rider") {
+
+  return `
+
+<!DOCTYPE html>
+<html>
+
+<body style="
+  margin:0;
+  padding:0;
+  background:#f5f5f5;
+  font-family:Arial,sans-serif;
+">
+
+<table width="100%"
+cellpadding="0"
+cellspacing="0">
+
+<tr>
+<td align="center">
+
+<table width="650"
+cellpadding="0"
+cellspacing="0"
+
+style="
+  background:#ffffff;
+  margin-top:20px;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 4px 18px rgba(0,0,0,0.08);
+">
+
+<!-- HEADER -->
+
+<tr>
+
+<td style="
+  background:#111111;
+  padding:30px;
+">
+
+<img
+  src="${logo}"
+  width="160"
+/>
+
+<p style="
+  color:#00d084;
+  font-size:20px;
+  font-weight:bold;
+  margin-top:18px;
+">
+
+📮 Rider Application
+
+</p>
+
+</td>
+
+</tr>
+
+<!-- BODY -->
+
+<tr>
+
+<td style="
+  padding:35px;
+">
+
+<p style="
+  color:#222222;
+  font-size:18px;
+">
+
+Hi <strong>${name}</strong>,
+
+</p>
+
+<p style="
+  color:#555555;
+  line-height:1.8;
+">
+
+Thank you for applying!
+
+Your rider application has been received successfully.
+
+We're excited to welcome you
+to the Shippzi delivery network.
+
+</p>
+
+<h3 style="
+  margin-top:30px;
+  color:#111111;
+">
+
+⏱️ Next Steps:
+
+</h3>
+
+<p style="
+  color:#555555;
+  line-height:1.8;
+">
+
+Our rider onboarding team
+will contact you within
+24-48 hours for verification
+and onboarding process.
+
+</p>
+
+<h3 style="
+  margin-top:35px;
+  color:#111111;
+">
+
+⭐ Why Ride with Shippzi:
+
+</h3>
+
+<table width="100%"
+cellpadding="10">
+
+<tr>
+<td>
+➜ Flexible working hours
+</td>
+</tr>
+
+<tr>
+<td>
+➜ Weekly payout support
+</td>
+</tr>
+
+<tr>
+<td>
+➜ High earning opportunities
+</td>
+</tr>
+
+<tr>
+<td>
+➜ Fast growing delivery network
+</td>
+</tr>
+
+</table>
+
+<div style="
+  background:#eefbf5;
+  border-left:4px solid #00d084;
+  padding:18px;
+  border-radius:8px;
+  margin-top:30px;
+">
+
+🎉 Early Rider Advantage:
+Start early and earn exciting
+performance incentives!
+
+</div>
+
+<div style="
+  background:#f5f5f5;
+  padding:20px;
+  border-radius:10px;
+  margin-top:30px;
+">
+
+<h3 style="
+  margin-top:0;
+">
+
+Get in Touch
+
+</h3>
+
+<p>
+📧 shippzi.support@gmail.com
+</p>
+
+<p>
+📞 +91-SHIPPZI-1
+</p>
+
+<p>
+🌐 www.shippzi.com
+</p>
+
+</div>
+
+<div style="
+  margin-top:35px;
+">
+
+<a href="${websiteLink}"
+
+style="
+  background:#ffffff;
+  border:1px solid #111111;
+  color:#111111;
+  text-decoration:none;
+  padding:14px 26px;
+  border-radius:8px;
+  display:inline-block;
+  font-weight:bold;
+">
+
+Join Shippzi
+
+</a>
+
+</div>
+
+<div style="
+  margin-top:45px;
+  border-top:1px solid #eeeeee;
+  padding-top:25px;
+">
+
+<p style="
+  color:#555555;
+">
+
+Warm regards,
+
+</p>
+
+<p style="
+  font-weight:bold;
+  color:#111111;
+">
+
+Shippzi Rider Team
+
+</p>
+
+<p style="
+  margin-top:30px;
+  color:#999999;
+  font-size:13px;
+">
+
+🚴 Start your earning journey with Shippzi!
+
+</p>
+
+</div>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+</tr>
+
+</table>
+
+</body>
+</html>
+
+`;
+
+}
+
+/* ============================================================
+   SHIPPZI PARTNER TEMPLATE
+============================================================ */
+
+if (website === "shippzi") {
+
+  return `
 
 <!DOCTYPE html>
 <html>
@@ -382,8 +661,9 @@ to collaborate.
 ">
 
 Our BD team will contact you
-within 2-3 business days to discuss
-your goals and partnership options.
+within 2-3 business days
+to discuss your goals and
+explore partnership options.
 
 </p>
 
@@ -459,7 +739,7 @@ Get in Touch
 </h3>
 
 <p>
-📧 shippzi.support@gmail.com
+📧 partnerships@shippzi.com
 </p>
 
 <p>
@@ -467,7 +747,7 @@ Get in Touch
 </p>
 
 <p>
-🌐 www.shippzi.com
+📅 calendly.com/shippzi-partnerships
 </p>
 
 </div>
@@ -489,7 +769,7 @@ style="
   font-weight:bold;
 ">
 
-Explore Shippzi
+Schedule a Call
 
 </a>
 
@@ -524,7 +804,7 @@ Shippzi Team
   font-size:13px;
 ">
 
-💛 Let's build something great together!
+🤝 Let's build something great together!
 
 </p>
 
@@ -546,20 +826,57 @@ Shippzi Team
 
 `;
 
-  }
+}
+
+
 
   /* ============================================================
      NVKAR TEMPLATE
   ============================================================ */
 
-  const applicationId =
-  "APP-" +
+  /* ============================================================
+   PROFESSIONAL APPLICATION ID
+============================================================ */
+
+const now = new Date();
+
+/* =========================
+   DATE FORMAT
+========================= */
+
+const year =
+  now.getFullYear();
+
+const month = String(
+  now.getMonth() + 1
+).padStart(2, "0");
+
+const day = String(
+  now.getDate()
+).padStart(2, "0");
+
+/* =========================
+   RANDOM NUMBER
+========================= */
+
+const randomNumber =
   Math.floor(
-    100000 + Math.random() * 900000
+    1000 + Math.random() * 9000
   );
 
+/* =========================
+   APPLICATION ID
+========================= */
+
+const applicationId =
+  `NVKAR-${year}${month}${day}-${randomNumber}`;
+
+/* =========================
+   DISPLAY DATE
+========================= */
+
 const today =
-  new Date().toLocaleDateString();
+  `${day}/${month}/${year}`;
 
 return `
 
@@ -608,7 +925,7 @@ style="
   font-weight:bold;
 ">
 
-Welcome to Shippzi
+
 
 </td>
 
@@ -726,24 +1043,52 @@ with our discerning clients.
 
 </h3>
 
-<p>
-<strong>Application ID:</strong>
+<p style="
+  font-size:17px;
+  margin-bottom:12px;
+">
+<strong>
+Application ID:
+</strong>
+
 ${applicationId}
+
 </p>
 
-<p>
-<strong>Applied For:</strong>
+<p style="
+  font-size:17px;
+  margin-bottom:12px;
+">
+<strong>
+Applied For:
+</strong>
+
 ${service}
+
 </p>
 
-<p>
-<strong>Submitted On:</strong>
+<p style="
+  font-size:17px;
+  margin-bottom:12px;
+">
+<strong>
+Submitted On:
+</strong>
+
 ${today}
+
 </p>
 
-<p>
-<strong>Status:</strong>
+<p style="
+  font-size:17px;
+  margin-bottom:0;
+">
+<strong>
+Status:
+</strong>
+
 Under Review
+
 </p>
 
 </div>
