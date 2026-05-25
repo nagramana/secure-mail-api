@@ -1241,58 +1241,45 @@ style="
 
 <td width="50%"
 
-<td width="50%"
-
 style="
-background:#faf7ff;
-border:1px solid #eadcff;
-border-radius:8px;
-padding:30px;
-text-align:center;
-"
-
->
+  background:#faf7ff;
+  border:1px solid #eadcff;
+  border-radius:8px;
+  padding:18px;
+">
 
 <h3 style="
   margin-top:0;
   color:#7d52b9;
-  font-size:30px;
-  line-height:1.6;
 ">
 
 📞 Need Help?
 
-<br/>
 
 <a
 href="https://wa.me/917893024466"
 target="_blank"
 
 style="
-color:#444444;
-font-size:18px;
+color:#555555;
+font-size:14px;
 text-decoration:none;
 font-weight:bold;
 "
 
 >
 
-+91 78930 24466
+📞 +91 78930 24466
 
 </a>
 
-</h3>
 
 <p style="
   color:#555555;
-  font-size:18px;
-  line-height:1.8;
-  margin-top:18px;
+  font-size:14px;
 ">
 
 Got questions about your application?
-
-<br/><br/>
 
 Our support team is here for you.
 
@@ -1300,12 +1287,31 @@ Our support team is here for you.
 
 </td>
 
+<td width="50%"
 
-</p>
+style="
+  background:#faf7ff;
+  border:1px solid #eadcff;
+  border-radius:8px;
+  padding:18px;
+">
 
-</td>
+<h3 style="
+  margin-top:0;
+  color:#7d52b9;
+">
 
+🎯 Quick Tips
 
+</h3>
+
+<p style="
+  color:#555555;
+  font-size:14px;
+">
+
+Complete your profile fully
+to improve approval chances.
 
 </p>
 
