@@ -324,15 +324,9 @@ style="
 ">
 
 <img
-src="${logo}"
-width="160"
-
-style="
-display:block;
-margin:0 auto;
-"
+  src="${logo}"
+  width="160"
 />
-
 
 <p style="
   color:#00d084;
@@ -750,7 +744,7 @@ Get in Touch
 </p>
 
 <p>
-📞 +91 78930 26644
+📞 +91 78930 24466
 </p>
 
 // <p>
