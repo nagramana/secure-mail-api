@@ -1310,8 +1310,9 @@ style="
   font-size:14px;
 ">
 
-Complete your profile fully
-to improve approval chances.
+To speed up the review process, make sureto have all your documents ready and
+keep an eye on your email for any
+additional information requests.
 
 </p>
 
