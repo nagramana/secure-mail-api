@@ -1279,18 +1279,7 @@ Our support team is here for you.
 
 </td>
 
-<td width="50%"
 
-style="
-  background:#faf7ff;
-  border:1px solid #eadcff;
-  border-radius:8px;
-  padding:18px;
-">
-
-
-
-</td>
 
 </tr>
 
