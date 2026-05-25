@@ -21,7 +21,7 @@ const getCompanyDetails = (website) => {
       "Shippzi";
 
     supportEmail =
-      "partnerships@shippzi.com";
+      "shippzi.support@gmail.com";
 
     websiteLink =
       "https://shippzi.in";
@@ -324,9 +324,15 @@ style="
 ">
 
 <img
-  src="${logo}"
-  width="160"
+src="${logo}"
+width="160"
+
+style="
+display:block;
+margin:0 auto;
+"
 />
+
 
 <p style="
   color:#00d084;
@@ -467,7 +473,7 @@ Get in Touch
 </p>
 
 <p>
-📞 +91-SHIPPZI-1
+📞 +91-
 </p>
 
 <p>
@@ -740,16 +746,16 @@ Get in Touch
 </h3>
 
 <p>
-📧 partnerships@shippzi.com
+📧 shippzi.support@gmail.com
 </p>
 
 <p>
-📞 +91-SHIPPZI-1
+📞 +91 78930 26644
 </p>
 
-<p>
-📅 calendly.com/shippzi-partnerships
-</p>
+// <p>
+// 📅 calendly.com/shippzi-partnerships
+// </p>
 
 </div>
 
@@ -757,22 +763,27 @@ Get in Touch
   margin-top:35px;
 ">
 
-<a href="${websiteLink}"
+<a
+href="https://wa.me/917893026644?text=Hello%20Shippzi%20Team"
+target="_blank"
 
 style="
-  background:#ffffff;
-  border:1px solid #111111;
-  color:#111111;
-  text-decoration:none;
-  padding:14px 26px;
-  border-radius:8px;
-  display:inline-block;
-  font-weight:bold;
-">
+background:#25D366;
+border:1px solid #25D366;
+color:#ffffff;
+text-decoration:none;
+padding:14px 26px;
+border-radius:8px;
+display:inline-block;
+font-weight:bold;
+"
 
-Schedule a Call
+>
+
+Contact via WhatsApp
 
 </a>
+
 
 </div>
 
