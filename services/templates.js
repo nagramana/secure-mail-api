@@ -1220,100 +1220,67 @@ This typically takes
 
 </p>
 
+<!-- BOXES -->
+
+<table width="100%"
+cellpadding="10"
+cellspacing="10"
+style="
+  margin-top:20px;
+">
+
+<tr>
+
 <td width="50%"
 
 style="
-background:#f5f5f5;
-border-radius:10px;
-padding:24px;
-"
-
->
+  background:#faf7ff;
+  border:1px solid #eadcff;
+  border-radius:8px;
+  padding:18px;
+">
 
 <h3 style="
   margin-top:0;
-  margin-bottom:22px;
-  color:#111111;
-  font-size:28px;
-  font-weight:bold;
+  color:#7d52b9;
 ">
 
-Get in Touch
+📞 Need Help?
 
-</h3>
-
-<p style="
-  margin:16px 0;
-  font-size:16px;
-">
-
-📧
-
-<a
-href="mailto:shippzi[.support@gmail.com](mailto:.support@gmail.com)"
-
-style="
-color:#0066cc;
-text-decoration:none;
-"
-
->
-
-[shippzi.support@gmail.com](mailto:shippzi.support@gmail.com)
-
-</a>
-
-</p>
-
-<p style="
-  margin:16px 0;
-  font-size:16px;
-">
-
-📞
 
 <a
 href="https://wa.me/917893024466"
 target="_blank"
 
 style="
-color:#111111;
+color:#555555;
+font-size:14px;
 text-decoration:none;
+font-weight:bold;
 "
 
 >
 
-+91 78930 24466
+ +91 78930 24466
 
 </a>
 
-</p>
 
 <p style="
-  margin:16px 0;
-  font-size:16px;
+  color:#555555;
+  font-size:14px;
 ">
 
-🌐
+Got questions about your application?
 
-<a
-href="https://www.shippzi.com"
-target="_blank"
-
-style="
-color:#0066cc;
-text-decoration:none;
-"
-
->
-
-[www.shippzi.com](http://www.shippzi.com)
-
-</a>
+Our support team is here for you.
 
 </p>
 
 </td>
+
+
+
 
 
 
