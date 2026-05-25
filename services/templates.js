@@ -1231,7 +1231,7 @@ style="
 
 <tr>
 
-<td width="50%"
+<td width="100%"
 
 style="
   background:#faf7ff;
