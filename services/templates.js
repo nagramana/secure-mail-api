@@ -321,11 +321,6 @@ style="
 <td style="
   background:#111111;
   padding:30px;
-">
-
-<td style="
-  background:#111111;
-  padding:30px;
   text-align:center;
 ">
 
@@ -350,9 +345,6 @@ margin:0 auto;
 📮 Rider Application
 
 </p>
-
-</td>
-
 
 </td>
 
@@ -1269,7 +1261,7 @@ font-weight:bold;
 
 >
 
-📞 +91 78930 24466
+ +91 78930 24466
 
 </a>
 
