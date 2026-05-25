@@ -1288,24 +1288,7 @@ style="
   padding:18px;
 ">
 
-<h3 style="
-  margin-top:0;
-  color:#7d52b9;
-">
 
-🎯 Quick Tips
-
-</h3>
-
-<p style="
-  color:#555555;
-  font-size:14px;
-">
-
-Complete your profile fully
-to improve approval chances.
-
-</p>
 
 </td>
 
