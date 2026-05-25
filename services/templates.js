@@ -1220,43 +1220,32 @@ This typically takes
 
 </p>
 
-<!-- QUICK TIPS -->
+<!-- BOXES -->
 
-<div
+<table width="100%"
+cellpadding="10"
+cellspacing="10"
+style="
+  margin-top:20px;
+">
+
+<tr>
+
+<td width="50%"
 
 style="
-background:#faf7ff;
-border:1px solid #eadcff;
-border-radius:8px;
-padding:24px;
-margin-top:25px;
-"
-
->
+  background:#faf7ff;
+  border:1px solid #eadcff;
+  border-radius:8px;
+  padding:18px;
+">
 
 <h3 style="
   margin-top:0;
   color:#7d52b9;
-  font-size:28px;
 ">
 
-🎯 Quick Tips
-
-</h3>
-
-<p style="
-  color:#555555;
-  font-size:16px;
-  line-height:1.8;
-  margin-top:12px;
-">
-
-Complete your profile fully
-to improve approval chances.
-
-</p>
-
-</div>
+📞 Need Help?
 
 
 <a
