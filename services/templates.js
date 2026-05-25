@@ -604,9 +604,24 @@ style="
   padding:30px;
 ">
 
+<!-- HEADER -->
+
+<tr>
+
+<td style="
+  background:#111111;
+  padding:30px;
+  text-align:center;
+">
+
 <img
-  src="${logo}"
-  width="160"
+src="${logo}"
+width="160"
+
+style="
+display:block;
+margin:0 auto;
+"
 />
 
 <p style="
@@ -614,9 +629,17 @@ style="
   font-size:20px;
   font-weight:bold;
   margin-top:18px;
+  text-align:center;
 ">
 
 📮 Partnership Inquiry
+
+</p>
+
+</td>
+
+</tr>
+
 
 </p>
 
