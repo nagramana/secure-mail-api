@@ -1240,24 +1240,15 @@ This typically takes
 ">
 
 <div style="
-  font-size:22px;
-  margin-bottom:8px;
-">
-
-📞
-
-</div>
-
-<h2 style="
-  color:#4b2ca3;
-  margin-top:0;
+  margin-bottom:18px;
   font-size:22px;
   font-weight:bold;
+  color:#4b2ca3;
 ">
 
-Need Help?
+📞 Need Help?
 
-</h2>
+</div>
 
 <div style="
   margin-top:18px;
