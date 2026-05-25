@@ -473,7 +473,7 @@ Get in Touch
 </p>
 
 <p>
-📞 +91-
+📞 +91 78930 24466
 </p>
 
 <p>
@@ -499,7 +499,7 @@ style="
   font-weight:bold;
 ">
 
-Join Shippzi
+download shippzi app
 
 </a>
 
