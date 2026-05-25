@@ -1228,40 +1228,126 @@ This typically takes
 
 </p>
 
-<!-- BOXES -->
+<!-- SUPPORT SECTION -->
+
+<div style="
+  background:#faf7ff;
+  border:1px solid #eadcff;
+  border-radius:14px;
+  padding:35px;
+  margin-top:35px;
+  text-align:center;
+">
+
+<div style="
+  font-size:42px;
+  margin-bottom:10px;
+">
+
+📞
+
+</div>
+
+<h2 style="
+  color:#4b2ca3;
+  margin-top:0;
+  font-size:38px;
+  font-weight:bold;
+">
+
+Need Help?
+
+</h2>
 
 <table width="100%"
 cellpadding="10"
-cellspacing="10"
+cellspacing="0"
 style="
-  margin-top:20px;
+  margin-top:25px;
 ">
 
 <tr>
 
-<td width="50%"
+<td width="50%">
+
+<p style="
+  color:#666666;
+  font-size:14px;
+  letter-spacing:2px;
+  margin-bottom:10px;
+">
+
+PHONE
+
+</p>
+
+<a
+href="https://wa.me/917893024466"
+target="_blank"
 
 style="
-  background:#faf7ff;
-  border:1px solid #eadcff;
-  border-radius:8px;
+  display:block;
+  background:#ffffff;
+  border:2px solid #b26b7f;
+  border-radius:12px;
   padding:18px;
+  font-size:22px;
+  color:#222222;
+  text-decoration:none;
+  font-weight:bold;
+"
+>
+
++91 78930 24466
+
+</a>
+
+</td>
+
+<td width="50%">
+
+<p style="
+  color:#666666;
+  font-size:14px;
+  letter-spacing:2px;
+  margin-bottom:10px;
 ">
 
-<h3 style="
-  margin-top:0;
-  color:#7d52b9;
-">
+EMAIL
 
-📞 Need Help?
+</p>
 
+<a
+href="mailto:support@nvkar.com"
 
+style="
+  display:block;
+  background:#ffffff;
+  border:2px solid #b26b7f;
+  border-radius:12px;
+  padding:18px;
+  font-size:22px;
+  color:#222222;
+  text-decoration:none;
+  font-weight:bold;
+"
+>
 
+support@nvkar.com
 
+</a>
+
+</td>
+
+</tr>
+
+</table>
 
 <p style="
   color:#555555;
-  font-size:14px;
+  font-size:18px;
+  line-height:1.8;
+  margin-top:30px;
 ">
 
 Got questions about your application?
@@ -1269,62 +1355,8 @@ Got questions about your application?
 Our support team is here for you.
 
 </p>
-<br/>
-<a
-href="https://wa.me/917893024466"
-target="_blank"
 
-style="
-color:#555555;
-font-size:14px;
-text-decoration:none;
-font-weight:bold;
-"
-
->
-
-📞 +91 78930 24466
-
-</a>
-
-
-
-</td>
-
-<td width="50%"
-
-style="
-  background:#faf7ff;
-  border:1px solid #eadcff;
-  border-radius:8px;
-  padding:18px;
-">
-
-<h3 style="
-  margin-top:0;
-  color:#7d52b9;
-">
-
-🎯 Quick Tips
-
-</h3>
-
-<p style="
-  color:#555555;
-  font-size:14px;
-">
-
-To speed up the review process, make sureto have all your documents ready and
-keep an eye on your email for any
-additional information requests.
-
-</p>
-
-</td>
-
-</tr>
-
-</table>
+</div>
 
 <!-- BUTTON -->
 
@@ -1355,12 +1387,18 @@ Visit NVKAR
 <!-- FOOTER -->
 
 <div style="
-  margin-top:50px;
+  margin-top:45px;
+  text-align:center;
+  border-top:1px solid #eeeeee;
+  padding-top:35px;
 ">
 
 <p style="
   color:#555555;
   line-height:1.9;
+  font-size:16px;
+  max-width:600px;
+  margin:0 auto;
 ">
 
 We're excited about the possibility
@@ -1372,8 +1410,10 @@ starts with great people.
 </p>
 
 <p style="
-  margin-top:30px;
+  margin-top:35px;
   color:#333333;
+  font-size:17px;
+  line-height:1.8;
 ">
 
 Warm regards,
