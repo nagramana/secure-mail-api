@@ -486,22 +486,25 @@ Get in Touch
   margin-top:35px;
 ">
 
-<a href="${websiteLink}"
+<a
+href="https://play.google.com/store/apps/details?id=com.shippzi.app"
+target="_blank"
 
 style="
-  background:#ffffff;
-  border:1px solid #111111;
-  color:#111111;
-  text-decoration:none;
-  padding:14px 26px;
-  border-radius:8px;
-  display:inline-block;
-  font-weight:bold;
+background:#00d084;
+border:1px solid #00d084;
+color:#ffffff;
+text-decoration:none;
+padding:14px 26px;
+border-radius:8px;
+display:inline-block;
+font-weight:bold;
 ">
 
-download shippzi app
+Download Shippzi App
 
 </a>
+
 
 </div>
 
