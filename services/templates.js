@@ -1246,7 +1246,7 @@ This typically takes
   color:#4b2ca3;
 ">
 
-📞 Need Help?
+ Need Help?
 
 </div>
 
