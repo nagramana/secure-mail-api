@@ -776,9 +776,7 @@ Get in Touch
 📞 +91 78930 24466
 </p>
 
-// <p>
-// 📅 calendly.com/shippzi-partnerships
-// </p>
+
 
 </div>
 
