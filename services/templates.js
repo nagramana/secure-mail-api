@@ -1240,8 +1240,8 @@ This typically takes
 ">
 
 <div style="
-  font-size:42px;
-  margin-bottom:10px;
+  font-size:22px;
+  margin-bottom:8px;
 ">
 
 📞
@@ -1251,7 +1251,7 @@ This typically takes
 <h2 style="
   color:#4b2ca3;
   margin-top:0;
-  font-size:38px;
+  font-size:22px;
   font-weight:bold;
 ">
 
@@ -1259,95 +1259,49 @@ Need Help?
 
 </h2>
 
-<table width="100%"
-cellpadding="10"
-cellspacing="0"
-style="
-  margin-top:25px;
+<div style="
+  margin-top:18px;
 ">
-
-<tr>
-
-<td width="50%">
-
-<p style="
-  color:#666666;
-  font-size:14px;
-  letter-spacing:2px;
-  margin-bottom:10px;
-">
-
-PHONE
-
-</p>
 
 <a
 href="https://wa.me/917893024466"
 target="_blank"
 
 style="
-  display:block;
-  background:#ffffff;
-  border:2px solid #b26b7f;
-  border-radius:12px;
-  padding:18px;
-  font-size:22px;
   color:#222222;
   text-decoration:none;
+  font-size:16px;
   font-weight:bold;
+  margin-right:18px;
 "
 >
 
-+91 78930 24466
+📞 +91 78930 24466
 
 </a>
-
-</td>
-
-<td width="50%">
-
-<p style="
-  color:#666666;
-  font-size:14px;
-  letter-spacing:2px;
-  margin-bottom:10px;
-">
-
-EMAIL
-
-</p>
 
 <a
 href="mailto:support@nvkar.com"
 
 style="
-  display:block;
-  background:#ffffff;
-  border:2px solid #b26b7f;
-  border-radius:12px;
-  padding:18px;
-  font-size:22px;
   color:#222222;
   text-decoration:none;
+  font-size:16px;
   font-weight:bold;
 "
 >
 
-support@nvkar.com
+📧 support@nvkar.com
 
 </a>
 
-</td>
-
-</tr>
-
-</table>
+</div>
 
 <p style="
   color:#555555;
-  font-size:18px;
+  font-size:15px;
   line-height:1.8;
-  margin-top:30px;
+  margin-top:22px;
 ">
 
 Got questions about your application?
