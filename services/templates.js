@@ -459,7 +459,7 @@ Get in Touch
 </h3>
 
 <p>
-📧 partnerships@shippzi.com
+📧 shippzi.support@gmail.com
 </p>
 
 <p>
@@ -467,7 +467,7 @@ Get in Touch
 </p>
 
 <p>
-🗓 calendly.com/shippzi-partnerships
+🌐 www.shippzi.com
 </p>
 
 </div>
@@ -489,7 +489,7 @@ style="
   font-weight:bold;
 ">
 
-Schedule a Call
+Explore Shippzi
 
 </a>
 
@@ -608,7 +608,7 @@ style="
   font-weight:bold;
 ">
 
-
+Welcome to Shippzi
 
 </td>
 
