@@ -47,7 +47,7 @@ const getCompanyDetails = (website) => {
       "https://nvkar.in";
 
     logo =
-      "https://res.cloudinary.com/dzosvvlib/image/upload/v1778587420/logo_white_icvrqm.png";
+      "https://res.cloudinary.com/dzosvvlib/image/upload/v1779708263/nvkar_zfaryi.png";
 
   }
 
