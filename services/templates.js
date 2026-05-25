@@ -323,6 +323,12 @@ style="
   padding:30px;
 ">
 
+<td style="
+  background:#111111;
+  padding:30px;
+  text-align:center;
+">
+
 <img
 src="${logo}"
 width="160"
@@ -333,17 +339,20 @@ margin:0 auto;
 "
 />
 
-
 <p style="
   color:#00d084;
   font-size:20px;
   font-weight:bold;
   margin-top:18px;
+  text-align:center;
 ">
 
 📮 Rider Application
 
 </p>
+
+</td>
+
 
 </td>
 
@@ -487,7 +496,7 @@ Get in Touch
 ">
 
 <a
-href="https://play.google.com/store/apps/details?id=com.shippzi.app"
+href="https://play.google.com/store/apps/details?id=com.shippzi.rider&pcampaignid=web_share"
 target="_blank"
 
 style="
@@ -1247,12 +1256,23 @@ style="
 📞 Need Help?
 
 
-</h3>
-<h2 style="
-  color:#555555;
-">
-91 78930 24466
-</h2>
+<a
+href="https://wa.me/917893024466"
+target="_blank"
+
+style="
+color:#555555;
+font-size:14px;
+text-decoration:none;
+font-weight:bold;
+"
+
+>
+
+📞 +91 78930 24466
+
+</a>
+
 
 <p style="
   color:#555555;
