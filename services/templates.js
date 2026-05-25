@@ -321,6 +321,11 @@ style="
 <td style="
   background:#111111;
   padding:30px;
+">
+
+<td style="
+  background:#111111;
+  padding:30px;
   text-align:center;
 ">
 
@@ -345,6 +350,9 @@ margin:0 auto;
 📮 Rider Application
 
 </p>
+
+</td>
+
 
 </td>
 
@@ -1231,7 +1239,7 @@ style="
 
 <tr>
 
-<td width="100%"
+<td width="50%"
 
 style="
   background:#faf7ff;
@@ -1279,11 +1287,39 @@ Our support team is here for you.
 
 </td>
 
+<td width="50%"
 
+style="
+  background:#faf7ff;
+  border:1px solid #eadcff;
+  border-radius:8px;
+  padding:18px;
+">
 
+<h3 style="
+  margin-top:0;
+  color:#7d52b9;
+">
 
+🎯 Quick Tips
 
+</h3>
 
+<p style="
+  color:#555555;
+  font-size:14px;
+">
+
+Complete your profile fully
+to improve approval chances.
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
 
 <!-- BUTTON -->
 
