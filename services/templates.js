@@ -1228,8 +1228,19 @@ This typically takes
 
 </p>
 
+<!-- SUPPORT SECTION -->
+
 <div style="
-  font-size:28px;
+  background:#faf7ff;
+  border:1px solid #eadcff;
+  border-radius:14px;
+  padding:35px;
+  margin-top:35px;
+  text-align:center;
+">
+
+<div style="
+  font-size:42px;
   margin-bottom:10px;
 ">
 
@@ -1240,7 +1251,7 @@ This typically takes
 <h2 style="
   color:#4b2ca3;
   margin-top:0;
-  font-size:28px;
+  font-size:38px;
   font-weight:bold;
 ">
 
@@ -1248,51 +1259,172 @@ Need Help?
 
 </h2>
 
-<div style="
+<table width="100%"
+cellpadding="10"
+cellspacing="0"
+style="
   margin-top:25px;
 ">
+
+<tr>
+
+<td width="50%">
+
+<p style="
+  color:#666666;
+  font-size:14px;
+  letter-spacing:2px;
+  margin-bottom:10px;
+">
+
+PHONE
+
+</p>
 
 <a
 href="https://wa.me/917893024466"
 target="_blank"
 
 style="
-  display:inline-block;
+  display:block;
   background:#ffffff;
   border:2px solid #b26b7f;
-  border-radius:10px;
-  padding:14px 22px;
-  font-size:18px;
+  border-radius:12px;
+  padding:18px;
+  font-size:22px;
   color:#222222;
   text-decoration:none;
   font-weight:bold;
-  margin-right:12px;
 "
 >
 
-📞 +91 78930 24466
++91 78930 24466
 
 </a>
+
+</td>
+
+<td width="50%">
+
+<p style="
+  color:#666666;
+  font-size:14px;
+  letter-spacing:2px;
+  margin-bottom:10px;
+">
+
+EMAIL
+
+</p>
 
 <a
 href="mailto:support@nvkar.com"
 
 style="
-  display:inline-block;
+  display:block;
   background:#ffffff;
   border:2px solid #b26b7f;
-  border-radius:10px;
-  padding:14px 22px;
-  font-size:18px;
+  border-radius:12px;
+  padding:18px;
+  font-size:22px;
   color:#222222;
   text-decoration:none;
   font-weight:bold;
 "
 >
 
-📧 support@nvkar.com
+support@nvkar.com
 
 </a>
+
+</td>
+
+</tr>
+
+</table>
+
+<p style="
+  color:#555555;
+  font-size:18px;
+  line-height:1.8;
+  margin-top:30px;
+">
+
+Got questions about your application?
+
+Our support team is here for you.
+
+</p>
+
+</div>
+
+<!-- BUTTON -->
+
+<div style="
+  text-align:center;
+  margin-top:40px;
+">
+
+<a href="${websiteLink}"
+
+style="
+  background:#7d52b9;
+  color:#ffffff;
+  text-decoration:none;
+  padding:16px 34px;
+  border-radius:8px;
+  display:inline-block;
+  font-weight:bold;
+  font-size:16px;
+">
+
+Visit NVKAR
+
+</a>
+
+</div>
+
+<!-- FOOTER -->
+
+<div style="
+  margin-top:45px;
+  text-align:center;
+  border-top:1px solid #eeeeee;
+  padding-top:35px;
+">
+
+<p style="
+  color:#555555;
+  line-height:1.9;
+  font-size:16px;
+  max-width:600px;
+  margin:0 auto;
+">
+
+We're excited about the possibility
+of working with you.
+
+At NVKAR, we believe that great service
+starts with great people.
+
+</p>
+
+<p style="
+  margin-top:35px;
+  color:#333333;
+  font-size:17px;
+  line-height:1.8;
+">
+
+Warm regards,
+
+<br/><br/>
+
+<strong>
+The NVKAR Team
+</strong>
+
+</p>
 
 </div>
 
