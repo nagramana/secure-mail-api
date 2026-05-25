@@ -324,9 +324,15 @@ style="
 ">
 
 <img
-  src="${logo}"
-  width="160"
+src="${logo}"
+width="160"
+
+style="
+display:block;
+margin:0 auto;
+"
 />
+
 
 <p style="
   color:#00d084;
